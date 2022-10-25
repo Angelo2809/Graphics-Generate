@@ -345,12 +345,12 @@ public class DesenharLinhaXY extends javax.swing.JFrame {
         g2.drawString("7", 90, 25);
         
         // -y 
-        g2.drawString("1", 90, 185);
-        g2.drawString("2", 90, 205);
-        g2.drawString("3", 90, 225);
-        g2.drawString("4", 90, 245);
-        g2.drawString("5", 90, 265);
-        g2.drawString("6", 90, 285);
+        g2.drawString("-1", 87, 185);
+        g2.drawString("-2", 87, 205);
+        g2.drawString("-3", 87, 225);
+        g2.drawString("-4", 87, 245);
+        g2.drawString("-5", 87, 265);
+        g2.drawString("-6", 87, 285);
         
         // x
          g2.drawString("1", 115, 170);
@@ -362,10 +362,10 @@ public class DesenharLinhaXY extends javax.swing.JFrame {
         g2.drawString("7", 235, 170);
         
         // -x
-        g2.drawString("1", 75, 170);
-        g2.drawString("2", 55, 170);
-        g2.drawString("3", 35, 170);
-        g2.drawString("4", 15, 170);
+        g2.drawString("-1", 75, 170);
+        g2.drawString("-2", 55, 170);
+        g2.drawString("-3", 35, 170);
+        g2.drawString("-4", 15, 170);
         
         
     }
