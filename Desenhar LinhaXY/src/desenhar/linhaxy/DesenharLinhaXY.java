@@ -154,9 +154,6 @@ public class DesenharLinhaXY extends javax.swing.JFrame {
                         .addGap(107, 107, 107)
                         .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
@@ -169,8 +166,10 @@ public class DesenharLinhaXY extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton1))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -188,8 +187,8 @@ public class DesenharLinhaXY extends javax.swing.JFrame {
                                 .addComponent(xTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButton1))
                             .addComponent(jLabel1))
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE))
@@ -215,10 +214,10 @@ public class DesenharLinhaXY extends javax.swing.JFrame {
             quadriculado(g);
             base(g);
             
-        int xmin = 0;
-        int ymin  = 0;
-        int xmax = 0;
-        int ymax = 0;
+        int xmin = Integer.parseInt(jTable3.getValueAt(0, 0).toString());
+        int ymin  = Integer.parseInt(jTable3.getValueAt(0, 1).toString());
+        int xmax = Integer.parseInt(jTable3.getValueAt(0, 0).toString());
+        int ymax = Integer.parseInt(jTable3.getValueAt(0, 1).toString());
         for( int i = 0; i < number_rows; i++){
             if(Integer.parseInt(jTable3.getValueAt(i, 0).toString()) > xmax){
                 xmax = Integer.parseInt(jTable3.getValueAt(i, 0).toString());
@@ -250,7 +249,7 @@ public class DesenharLinhaXY extends javax.swing.JFrame {
        var xInsert = xTxt.getText();
        yInsert = yInsert.replace(" ", "");
        if(!yInsert.startsWith("y=")){
-           throw new Exception("Do not starts with y=");
+           throw new Exception("Nao corresponde a formula y = ax + c");
        }
        yInsert = yInsert.substring(2);
        int a = yInsert.indexOf('x');
@@ -335,12 +334,45 @@ public class DesenharLinhaXY extends javax.swing.JFrame {
         g2.setStroke(new BasicStroke(3));
         g2.drawLine(0, 160, 240, 160);
         g2.drawLine(100, 0, 100, 300);
+        
+        // y
         g2.drawString("1", 90, 145);
+        g2.drawString("2", 90, 125);
+        g2.drawString("3", 90, 105);
+        g2.drawString("4", 90, 85);
+        g2.drawString("5", 90, 65);
+        g2.drawString("6", 90, 45);
+        g2.drawString("7", 90, 25);
+        
+        // -y 
+        g2.drawString("1", 90, 185);
+        g2.drawString("2", 90, 205);
+        g2.drawString("3", 90, 225);
+        g2.drawString("4", 90, 245);
+        g2.drawString("5", 90, 265);
+        g2.drawString("6", 90, 285);
+        
+        // x
+         g2.drawString("1", 115, 170);
+        g2.drawString("2", 135, 170);
+        g2.drawString("3", 155, 170);
+        g2.drawString("4", 175, 170);
+        g2.drawString("5", 195, 170);
+        g2.drawString("6", 215, 170);
+        g2.drawString("7", 235, 170);
+        
+        // -x
+        g2.drawString("1", 75, 170);
+        g2.drawString("2", 55, 170);
+        g2.drawString("3", 35, 170);
+        g2.drawString("4", 15, 170);
+        
+        
     }
     
     public void linha(java.awt.Graphics g, int x1, int y1, int x2, int y2){
         g.setColor(Color.blue);
-        g.drawLine(x1*10 +100, (-y1*10)+160, x2*10 +100, (-y2 * 10)+160);
+        g.drawLine(x1*20 +100, (-y1*20)+160, x2*20 +100, (-y2 * 20)+160);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
